@@ -1,0 +1,17 @@
+{% extends 'inventario/tienda.html' %}
+
+{% block Seccion %}
+    <p class="lead fw-normal text-white-50 mb-0">Seccion agregar productos</p>
+{% endblock Seccion %}
+
+{% block contenido %}
+  
+<h2>Producto</h2>
+  <form method="post">
+    
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Agregar</button>
+  </form>
+
+  {% endblock contenido %}

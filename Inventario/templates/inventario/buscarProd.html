@@ -1,0 +1,17 @@
+{% extends 'inventario/tienda.html' %}
+
+
+{% block Seccion %}
+    <p class="lead fw-normal text-white-50 mb-0">Buscar productos</p>
+{% endblock Seccion %}
+
+
+{% block contenido %}
+  
+<form action="{% url 'encontrarProducto' %}" method="get">
+    {% csrf_token %}
+    <p> Ingrese nombre del producto: <input type="text" name="buscar" id="buscar"></p>
+    <input type="submit" value="Buscar">
+</form>
+
+{% endblock contenido %}

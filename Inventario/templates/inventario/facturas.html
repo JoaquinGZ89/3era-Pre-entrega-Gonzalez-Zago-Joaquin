@@ -1,0 +1,26 @@
+{% extends 'inventario/tienda.html' %}
+
+
+{% block Seccion %}
+    <p class="lead fw-normal text-white-50 mb-0">Seccion Ventas realizadas</p>
+{% endblock Seccion %}
+
+
+{% block contenido %}
+  
+  <div class="row">
+    {% for factura in facturas %}
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Factura #{{ forloop.counter }}</h5>
+            <p class="card-text">Nombre: {{ factura.nombre_prod }}</p>
+            <p class="card-text">Total: {{ factura.total }}</p>
+            <p class="card-text">Fecha: {{ factura.fecha }}</p>
+          </div>
+        </div>
+      </div> 
+    {% endfor %}
+  </div>
+
+{% endblock contenido %}

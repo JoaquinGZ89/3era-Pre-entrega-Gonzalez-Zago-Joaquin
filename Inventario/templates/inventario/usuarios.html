@@ -1,0 +1,26 @@
+{% extends 'inventario/tienda.html' %}
+
+
+{% block Seccion %}
+    <p class="lead fw-normal text-white-50 mb-0">Usuarios registrados</p>
+{% endblock Seccion %}
+
+{% block contenido %}
+  
+  <div class="row">
+    {% for user in usuarios %}
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{user.nombre}} {{user.apellido}}</h5>
+            <p class="card-text">Usuario: {{ user.usuario }}</p>
+            <p class="card-text">Email: {{ user.email }}</p>
+            <p class="card-text">password: {{ user.password }}</p>
+
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+{% endblock contenido %}
